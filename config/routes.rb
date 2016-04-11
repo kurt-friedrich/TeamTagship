@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: [:index] do
     resources :ships, except: [:edit, :update]
+    resources :users, only: [:index]
   end
 
   resources :users, only: [:show] do
