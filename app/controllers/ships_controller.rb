@@ -24,7 +24,7 @@ class ShipsController < ApplicationController
 
     respond_to do |format|
       if @ship.save
-        format.html { redirect_to user_ships_path, notice: 'ship was successfully created.' }
+        format.html { redirect_to root_path, notice: 'ship was successfully created.' }
       else
         format.html { render :new }
       end

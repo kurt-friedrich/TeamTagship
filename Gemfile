@@ -9,8 +9,6 @@ gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -32,6 +30,9 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
 gem 'socialization'
+gem 'jquery-turbolinks'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 group :development do
 # better_errors for better debugging
