@@ -182,7 +182,6 @@ DEPENDENCIES
   better_errors
   bootstrap-sass (~> 3.3.6)
   byebug
-  coffee-rails (~> 4.1.0)
   faker
   jbuilder (~> 2.0)
   jquery-rails
