@@ -30,6 +30,9 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
 gem 'socialization'
+gem 'jquery-turbolinks'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 group :development do
 # better_errors for better debugging
