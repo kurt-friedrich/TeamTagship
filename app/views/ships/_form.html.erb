@@ -1,4 +1,5 @@
 <%= simple_form_for @ship,:url => user_ships_path, :method => :post do |f| %>
   <%= f.input :body, label: false, placeholder: "What you shippin' bout?" %>
   <%= f.button :submit, "New Ship", id: "btn-ship" %>
+  <span id="body-count">0</span> characters
 <% end %>

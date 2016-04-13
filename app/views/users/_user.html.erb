@@ -1,0 +1,18 @@
+<div class="row user-holder">
+  <div class="col-md-1 col-sm-2 col-xs-1 user-left">
+    <img class= "img-responsive img-rounded" src="https://unsplash.it/48/48/?random
+" alt="" />
+  </div>
+  <div class="col-md-11 col-sm-10 col-xs-11 user-right">
+    <div class="user-body">
+      <div class="user-body-header">
+        <div class="username">
+          <%= link_to user.username, user_path(user.id) %>
+        </div>
+      </div>
+      <div class="user-body-body">
+        <%= render partial: 'follow_logic' if current_user %>
+      </div>
+    </div>
+  </div>
+</div>

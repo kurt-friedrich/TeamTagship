@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :disallow_user, :only => [:new, :create]
-  before_action :require_user, :only => [:follow, :unfollow]
+  before_action :require_user, :only => [:follow, :unfollow, :index]
 
   def index
-    @users = User.all
+    @user = User.find(params[:user_id])
+    @users = User.all.page(params[:page]).per(10)
   end
 
   def show
@@ -19,22 +20,28 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_ships_path(@user.id)
+      redirect_to root_path
     else
       render :new
     end
   end
 
   def follow
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
     current_user.follow!(@user)
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js { }
+    end
   end
 
   def unfollow
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
     current_user.unfollow!(@user)
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js { render :follow }
+    end
   end
 
   private

@@ -1,5 +1,5 @@
   <% if current_user.follows?(@user) %>
-    <li><%= link_to "Unfollow", unfollow_user_path(user_id: @user.id), class: "btn btn-primary buttons"%></li>
+    <li><%= link_to "Unfollow", unfollow_user_path(id: @user.id), class: "btn btn-primary buttons", :data => {remote: true} %></li>
   <% else %>
-    <li><%= link_to "Follow", follow_user_path(user_id: @user.id), class: "btn btn-primary buttons"%></li>
+    <li><%= link_to "Follow", follow_user_path(id: @user.id), class: "btn btn-primary buttons", :data => {remote: true} %></li>
   <% end %>
